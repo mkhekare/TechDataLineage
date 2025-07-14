@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react';
-import mermaid from 'mermaid';
+import React, { useEffect, useRef } from 'react';
+import mermaid from 'mermaid'; // Still import to use mermaid.run()
 
 const LineageGraph = ({ graphDefinition }) => {
+    const mermaidContainerRef = useRef(null);
+
     useEffect(() => {
-        if (graphDefinition) {
-            // Initialize mermaid once (or ensure it's initialized)
-            mermaid.initialize({ startOnLoad: false }); // We will manually run it
+        if (graphDefinition && mermaidContainerRef.current) {
+            // Set the innerHTML directly
+            mermaidContainerRef.current.innerHTML = graphDefinition;
             
-            // Render the graph. mermaid.run() processes all elements with class 'mermaid'
-            // This ensures it re-renders when graphDefinition changes
+            // Tell mermaid to process the content within this specific element
             try {
                 mermaid.run({
-                    nodes: document.querySelectorAll('.mermaid')
+                    nodes: [mermaidContainerRef.current]
                 });
             } catch (e) {
                 console.error("Mermaid rendering error:", e);
+                mermaidContainerRef.current.innerHTML = `<pre>Error rendering graph: ${e.message}</pre>`;
             }
         }
     }, [graphDefinition]);
 
     return (
         <div className="lineage-graph">
-            <div className="mermaid">
+            <div ref={mermaidContainerRef} className="mermaid">
+                {/* Initial content or fallback for non-JS environments */}
+                {/* This will be replaced by mermaid.run() */}
                 {graphDefinition}
             </div>
         </div>
