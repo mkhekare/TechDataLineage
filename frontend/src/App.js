@@ -6,9 +6,11 @@ import './styles/App.css';
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" component={HomePage} />
-      </Switch>
+      <div className="App">
+        <Switch>
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </div>
     </Router>
   );
 }
