@@ -1,0 +1,13 @@
+# Jekyll configuration file to fix build errors caused by node_modules files
+
+exclude:
+  - frontend/node_modules
+  - frontend/build
+  - backend
+  - database
+  - .git
+  - .github
+  - README.md
+  - .DS_Store
+
+# You can add other Jekyll config options here as needed
