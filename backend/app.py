@@ -4,8 +4,8 @@ import tempfile
 import shutil
 from git import Repo, GitCommandError
 
-from models.ast_parser import ASTParser
-from models.graph_builder import GraphBuilder
+from backend.models.ast_parser import ASTParser
+from backend.models.graph_builder import GraphBuilder
 
 app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
 
