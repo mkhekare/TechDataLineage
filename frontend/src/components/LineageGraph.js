@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import mermaid from 'mermaid';
 
 const LineageGraph = ({ graphDefinition }) => {
@@ -9,6 +8,7 @@ const LineageGraph = ({ graphDefinition }) => {
         if (graphDefinition) {
             setGraph(graphDefinition);
             mermaid.initialize({ startOnLoad: true });
+            mermaid.contentLoaded(); // Re-render mermaid when graphDefinition changes
         }
     }, [graphDefinition]);
 

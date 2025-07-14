@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const RepositoryLinkInput = ({ onSubmit }) => {
+const RepositoryLinkInput = ({ onRepoSubmit }) => {
     const [repoLink, setRepoLink] = useState('');
 
     const handleChange = (event) => {
@@ -10,7 +10,7 @@ const RepositoryLinkInput = ({ onSubmit }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (repoLink) {
-            onSubmit(repoLink);
+            onRepoSubmit(repoLink);
             setRepoLink('');
         }
     };

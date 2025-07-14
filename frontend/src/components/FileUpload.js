@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FileUpload = () => {
+const FileUpload = ({ onFileUpload }) => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState('');
 
@@ -18,24 +18,7 @@ const FileUpload = () => {
             setError('Please upload a file.');
             return;
         }
-
-        const formData = new FormData();
-        formData.append('file', file);
-
-        try {
-            const response = await fetch('/api/upload', {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (!response.ok) {
-                throw new Error('File upload failed.');
-            }
-
-            // Handle successful upload (e.g., show success message)
-        } catch (error) {
-            setError(error.message);
-        }
+        onFileUpload(file);
     };
 
     return (
