@@ -4,8 +4,8 @@ import RepositoryLinkInput from '../components/RepositoryLinkInput';
 import LineageGraph from '../components/LineageGraph';
 
 const HomePage = () => {
-    const [lineageGraph, setLineageGraph] = useState('graph TD;
-    A[No Data Processed Yet]');
+    const [lineageGraph, setLineageGraph] = useState(`graph TD;
+    A[No Data Processed Yet]`);
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
 
