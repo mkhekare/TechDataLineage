@@ -1,6 +1,7 @@
 {
   "name": "ai-data-lineage-generator",
   "version": "1.0.0",
+  "homepage": "https://mkhekare.github.io/TechDataLineage/",
   "description": "AI-Powered Technical Data Lineage Generator",
   "main": "src/index.js",
   "scripts": {
