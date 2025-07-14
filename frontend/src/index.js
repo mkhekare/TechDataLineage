@@ -4,9 +4,11 @@ import App from './App';
 import mermaid from 'mermaid';
 
 mermaid.initialize({
-  startOnLoad: false, // We will manually trigger rendering
-  theme: 'default', // You can change this to 'dark', 'forest', 'neutral'
-  securityLevel: 'loose', // Allows more flexibility, but be aware of XSS risks with untrusted input
+  startOnLoad: false,
+  theme: 'default',
+  securityLevel: 'loose',
+  fontFamily: 'Roboto, sans-serif',
+  fontSize: '16px', // Increased font size for better readability
 });
 
 ReactDOM.render(
