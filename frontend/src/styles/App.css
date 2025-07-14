@@ -117,11 +117,20 @@ p[style*="color: red"] {
     justify-content: center;
     align-items: center;
     overflow: auto; /* Enable scrolling for large graphs */
+    position: relative; /* Needed for absolute positioning of SVG */
 }
 
-/* Mermaid specific styling (optional, for better integration) */
-.mermaid svg {
-    max-width: 100%;
-    height: auto;
+/* Mermaid specific styling for responsiveness */
+.lineage-graph svg {
+    max-width: none; /* Allow SVG to be wider than its container */
+    width: 100%; /* Make SVG fill its container width */
+    height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below SVG */
+    min-width: 100%; /* Ensure it doesn't shrink below container width */
+}
+
+/* If the graph is very large, allow it to overflow and be scrollable */
+.lineage-graph .mermaid {
+    display: inline-block; /* Allow content to dictate width */
+    min-width: 100%; /* Ensure it doesn't shrink below container width */
 }
