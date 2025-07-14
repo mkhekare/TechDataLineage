@@ -1,0 +1,11 @@
+{
+  "name": "tech-data-lineage",
+  "version": "1.0.0",
+  "description": "AI-Powered Technical Data Lineage Generator",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
