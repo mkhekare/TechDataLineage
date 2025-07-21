@@ -1,4 +1,4 @@
-import ast
+import ast # Python's built-in AST module for parsing Python code
 import os
 
 class ASTParser:
